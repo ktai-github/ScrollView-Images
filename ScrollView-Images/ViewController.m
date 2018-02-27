@@ -11,6 +11,7 @@
 @interface ViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) NSMutableArray<UIView*> *pages;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
 
 @end
 
@@ -24,17 +25,14 @@
   [self.scrollView setDelegate:self];
   [self setupPages];
   
-//  CGRect frame = CGRectMake(CGRectGetMidX(self.view.bounds) - width/2, CGRectGetMidY(self.view.bounds) - height/2, width, height);
-//
-//  UIView *view = [[UIView alloc] initWithFrame:frame];
-//
-//  view.backgroundColor = [UIColor orangeColor];
-//  [self.view addSubview:view];
-
-//  CGRect frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
-
+  [self.tapGestureRecognizer addTarget:self.scrollView action:@selector(imageTapped:) ];
   
 }
+
+- (IBAction)imageTapped:(UITapGestureRecognizer *)sender {
+  [self performSegueWithIdentifier:@"Segue" sender:sender];
+}
+
 
 - (void) setupPages {
   for (int i = 0; i < 3; i++) {

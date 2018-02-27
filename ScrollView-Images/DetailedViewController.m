@@ -27,6 +27,7 @@
 }
 
 - (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+  
   return self.detailedImageView;
 }     // return a view that will be scaled. if delegate returns nil, nothing happens
 
