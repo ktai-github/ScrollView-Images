@@ -13,6 +13,7 @@
 		2CD798DD2044FA530078786D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD798DC2044FA530078786D /* Assets.xcassets */; };
 		2CD798E02044FA530078786D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD798DE2044FA530078786D /* LaunchScreen.storyboard */; };
 		2CD798E32044FA530078786D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD798E22044FA530078786D /* main.m */; };
+		2CD798EB20450ABB0078786D /* DetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD798EA20450ABB0078786D /* DetailedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		2CD798DF2044FA530078786D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CD798E12044FA530078786D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CD798E22044FA530078786D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2CD798E920450ABB0078786D /* DetailedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailedViewController.h; sourceTree = "<group>"; };
+		2CD798EA20450ABB0078786D /* DetailedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				2CD798D42044FA520078786D /* AppDelegate.m */,
 				2CD798D62044FA520078786D /* ViewController.h */,
 				2CD798D72044FA520078786D /* ViewController.m */,
+				2CD798E920450ABB0078786D /* DetailedViewController.h */,
+				2CD798EA20450ABB0078786D /* DetailedViewController.m */,
 				2CD798D92044FA520078786D /* Main.storyboard */,
 				2CD798DC2044FA530078786D /* Assets.xcassets */,
 				2CD798DE2044FA530078786D /* LaunchScreen.storyboard */,
@@ -144,6 +149,7 @@
 			files = (
 				2CD798D82044FA520078786D /* ViewController.m in Sources */,
 				2CD798E32044FA530078786D /* main.m in Sources */,
+				2CD798EB20450ABB0078786D /* DetailedViewController.m in Sources */,
 				2CD798D52044FA520078786D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
