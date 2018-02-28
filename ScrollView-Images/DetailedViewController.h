@@ -9,5 +9,5 @@
 #import "ViewController.h"
 
 @interface DetailedViewController : ViewController
-
+@property (nonatomic) UIImage * image;
 @end
