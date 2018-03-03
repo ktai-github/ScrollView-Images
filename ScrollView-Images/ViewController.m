@@ -14,7 +14,6 @@
 @interface ViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-//@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (nonatomic)  UIPageControl *pageControl;
 @property (strong, nonatomic) NSMutableArray<UIView*> *pages;
 //@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;

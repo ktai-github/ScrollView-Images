@@ -8,6 +8,6 @@
 
 #import "ViewController.h"
 
-@interface DetailedViewController : ViewController
+@interface DetailedViewController : UIViewController
 @property (nonatomic) UIImage * image;
 @end

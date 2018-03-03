@@ -20,6 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
   self.detailedImageView.image = self.image;
+  
 }
 
 - (void)didReceiveMemoryWarning {
