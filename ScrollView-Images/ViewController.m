@@ -12,7 +12,10 @@
 //UIImageView *imageView;
 
 @interface ViewController () <UIScrollViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+//@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (nonatomic)  UIPageControl *pageControl;
 @property (strong, nonatomic) NSMutableArray<UIView*> *pages;
 //@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
 
@@ -22,18 +25,33 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(50,300,200,20)];
   // Do any additional setup after loading the view, typically from a nib.
   self.pages = [[NSMutableArray alloc] init];
-  [self.scrollView setPagingEnabled:YES];
-  [self.scrollView setDelegate:self];
+//  [self.scrollView setPagingEnabled:YES];
+  self.scrollView.pagingEnabled = YES;
+  //  [self.scrollView setDelegate:self];
+  self.scrollView.delegate = self;
   [self setupPages];
-  
-  
+  [self configurePageControl];
+}
+
+- (void) configurePageControl {
+  self.pageControl.numberOfPages = self.pages.count;
+  self.pageControl.currentPage = 0;
+  self.pageControl.tintColor = [UIColor redColor];
+  self.pageControl.pageIndicatorTintColor = [UIColor blackColor];
+  self.pageControl.currentPageIndicatorTintColor = [UIColor greenColor];
+  [self.view addSubview:self.pageControl];
 }
 
 - (IBAction)imageTapped:(UITapGestureRecognizer *)sender {
   [self performSegueWithIdentifier:@"Segue" sender:sender.view];
 }
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+  double pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width);
+  self.pageControl.currentPage = (int)pageNumber;
+}   // called on finger up as we are moving
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
   //self.currentPage = imageView.tag;
@@ -41,13 +59,13 @@
 //  scrollView.contentOffset
 //  int width = scrollView.frame.size.width;
 //  float xPos = scrollView.contentOffset.x+10;
-  UIPageControl *pageControl = [[UIPageControl alloc] init];
+//  self.pageControl = [[UIPageControl alloc] init];
     if (scrollView.contentOffset.x < 300) {
-      pageControl.currentPage = 1;
+      self.pageControl.currentPage = 0;
     } else if (scrollView.contentOffset.x >= 300 && scrollView.contentOffset.x < 600) {
-      pageControl.currentPage = 2;
+      self.pageControl.currentPage = 1;
     } else {
-      pageControl.currentPage = 3;
+      self.pageControl.currentPage = 2;
     }
   //
   //  NSLog(@"%d", self.currentPage);
